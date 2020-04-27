@@ -1,0 +1,6 @@
+framework module Pods_TJFramework {
+  umbrella header "Pods-TJFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

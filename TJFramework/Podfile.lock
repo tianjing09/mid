@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.7.3)
+  - KeychainAccess (3.1.1)
+  - Kingfisher (4.9.0)
+  - OpenShare (0.0.1)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - KeychainAccess
+  - Kingfisher
+  - OpenShare
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
+  OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 14544c20bf597fff0ff80e1adeca2ba1900df4ac
+
+COCOAPODS: 1.4.0

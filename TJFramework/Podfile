@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '8.0'
+use_frameworks!
+
+def shared_pods
+    pod 'KeychainAccess'
+    pod 'Kingfisher'
+    pod 'OpenShare'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'Alamofire'
+    pod 'SnapKit'
+end
+
+target 'TJFramework' do
+    project 'TJFramework.xcodeproj'
+    shared_pods
+end
