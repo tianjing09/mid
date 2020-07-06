@@ -195,6 +195,7 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
+    
     /*
     // MARK: - Navigation
 
