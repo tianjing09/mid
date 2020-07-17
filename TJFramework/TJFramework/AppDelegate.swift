@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       let a = minCost(withAllCostOption: [[1,2,3],[4,3,4],[2,4,1],[1,1,3],[7,4,5],[4,5,6]])
+        print(a)
         return true
     }
 
@@ -40,7 +42,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func minCost(withAllCostOption cost: [[Int]]) -> Int {
+        if cost.count < 1 || cost.count > 100 {
+          return -1
+        }
+        var preMin = min(numbers: cost[0])
+        if preMin == -1 {
+            return -1
+        }
+        var minTotalCost = preMin;
+        for perCost in cost[1..<cost.count] {
+           let minCount = min(numbers:perCost, preMin: preMin)
+            if minCount == -1 {
+                return -1
+            }
+            
+            minTotalCost = minCount + minTotalCost
+            preMin = minCount
+            print(preMin)
+        }
+        return minTotalCost
+    }
+    
+    func min(numbers:[Int],preMin:Int) -> Int {
+        if numbers.count != 3 {
+            return -1;
+        } else {
+            var shouldMin = min(numbers: numbers)
+            if shouldMin == preMin {
+                var muteNumberS = numbers
+                if let index = muteNumberS.index(of:preMin) {
+                    muteNumberS.remove(at: index)
+                    shouldMin = min(numbers: muteNumberS)
+                    
+                    if let index = muteNumberS.index(of:preMin) {
+                       muteNumberS.remove(at: index)
+                       shouldMin = min(numbers: muteNumberS)
+                    }
+                }
+            }
+            return shouldMin
+        }
+    }
+    
+    func min(numbers:[Int]) -> Int {
+        var min = numbers[0];
+        for number in numbers[1..<numbers.count] {
+            if number < min {
+                min = number
+            }
+        }
+        return min
+    }
 
 }
 

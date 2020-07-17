@@ -17,5 +17,12 @@ class TJColorfulBarView: UIView {
         // Drawing code
     }
     */
+    func refreshView(withData barViewData: Dictionary<String, Any>) -> Void {
+        
+    }
+    
+    func refreshView() -> Void {
+        
+    }
 
 }
