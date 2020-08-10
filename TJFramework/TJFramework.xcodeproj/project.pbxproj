@@ -19,6 +19,7 @@
 		3F05495821A7976E00060BBF /* TJMutiSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05495721A7976E00060BBF /* TJMutiSelectView.swift */; };
 		3F3685A22333274800EA4A9A /* TJSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3685A12333274800EA4A9A /* TJSnapViewController.swift */; };
 		3F3685A42333276C00EA4A9A /* TJRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3685A32333276C00EA4A9A /* TJRxSwiftViewController.swift */; };
+		3F65429A24D10FDD0052D842 /* ttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65429924D10FDD0052D842 /* ttt.swift */; };
 		3F85C046219D0B0E00994EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C045219D0B0E00994EF9 /* AppDelegate.swift */; };
 		3F85C048219D0B0E00994EF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C047219D0B0E00994EF9 /* ViewController.swift */; };
 		3F85C04B219D0B0E00994EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F85C049219D0B0E00994EF9 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		3F85C050219D0B1100994EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F85C04E219D0B1100994EF9 /* LaunchScreen.storyboard */; };
 		3F85C05B219D0B1100994EF9 /* TJFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C05A219D0B1100994EF9 /* TJFrameworkTests.swift */; };
 		3F85C066219D0B1100994EF9 /* TJFrameworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C065219D0B1100994EF9 /* TJFrameworkUITests.swift */; };
+		3FF5C61C24D10F9800D0107B /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5C61B24D10F9800D0107B /* test.swift */; };
 		FC956E7D2B74D60B114A0254 /* Pods_TJFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,7 @@
 		3F05495721A7976E00060BBF /* TJMutiSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJMutiSelectView.swift; sourceTree = "<group>"; };
 		3F3685A12333274800EA4A9A /* TJSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJSnapViewController.swift; sourceTree = "<group>"; };
 		3F3685A32333276C00EA4A9A /* TJRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRxSwiftViewController.swift; sourceTree = "<group>"; };
+		3F65429924D10FDD0052D842 /* ttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ttt.swift; sourceTree = "<group>"; };
 		3F85C042219D0B0E00994EF9 /* TJFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TJFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F85C045219D0B0E00994EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F85C047219D0B0E00994EF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		3F85C061219D0B1100994EF9 /* TJFrameworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TJFrameworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F85C065219D0B1100994EF9 /* TJFrameworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJFrameworkUITests.swift; sourceTree = "<group>"; };
 		3F85C067219D0B1100994EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF5C61B24D10F9800D0107B /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TJFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F33EE86A082573F77DD406 /* Pods-TJFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TJFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TJFramework/Pods-TJFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		F9DA9A46ADFF04246BE2A779 /* Pods-TJFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TJFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-TJFramework/Pods-TJFramework.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				3F85C04C219D0B1100994EF9 /* Assets.xcassets */,
 				3F85C04E219D0B1100994EF9 /* LaunchScreen.storyboard */,
 				3F85C051219D0B1100994EF9 /* Info.plist */,
+				3FF5C61B24D10F9800D0107B /* test.swift */,
+				3F65429924D10FDD0052D842 /* ttt.swift */,
 			);
 			path = TJFramework;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F65429A24D10FDD0052D842 /* ttt.swift in Sources */,
 				3F05494B21A24D9200060BBF /* TJTwoViewController.swift in Sources */,
 				3F05495621A6517E00060BBF /* TJCircleView.swift in Sources */,
 				3F05494621A245C800060BBF /* TJBaseViewController.swift in Sources */,
@@ -432,6 +439,7 @@
 				3F05493E219D707300060BBF /* TJService.swift in Sources */,
 				3F05495221A3E28F00060BBF /* TJColorfulBar.swift in Sources */,
 				3F3685A42333276C00EA4A9A /* TJRxSwiftViewController.swift in Sources */,
+				3FF5C61C24D10F9800D0107B /* test.swift in Sources */,
 				3F85C046219D0B0E00994EF9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

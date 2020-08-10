@@ -16,8 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       let a = minCost(withAllCostOption: [[1,2,3],[4,3,4],[2,4,1],[1,1,3],[7,4,5],[4,5,6]])
-        print(a)
+       //let a = minCost(withAllCostOption: [[3],[4],[21],[18],[7],[4]])
+       // print(a)
+        let d = ["jo":23,"ja":24]
+        let x = d.sorted{$0<$1}.map{$0}
+        
+        
+        var list = ["a","b","c","d","e","f","g"]
+        list[4...6] = ["5","6"]
+        print(list)
+        //fizzBuzz(n: 20)
         return true
     }
 
@@ -43,45 +51,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func fizzBuzz(n: Int) -> Void {
+        if n < 1 {
+            return
+        }
+        for i in 1...n {
+            if i % 3 == 0 && i % 5 == 0 {
+                print("FizzBuzz")
+            } else if i % 3 == 0 {
+                print("Fizz")
+            } else if i % 5 == 0 {
+                print("Buzz")
+            } else {
+                print(i)
+            }
+        }
+    }
+    
     func minCost(withAllCostOption cost: [[Int]]) -> Int {
         if cost.count < 1 || cost.count > 100 {
           return -1
         }
-        var preMin = min(numbers: cost[0])
-        if preMin == -1 {
-            return -1
-        }
+        let preMin = min(numbers: cost[0])
+        print(preMin)
         var minTotalCost = preMin;
+        var index = cost[0].index(of: preMin)!
         for perCost in cost[1..<cost.count] {
-           let minCount = min(numbers:perCost, preMin: preMin)
+           let minCount = min(numbers: perCost, preIndex: index)
             if minCount == -1 {
                 return -1
             }
-            
-            minTotalCost = minCount + minTotalCost
-            preMin = minCount
-            print(preMin)
+           minTotalCost = minCount + minTotalCost
+           index = perCost.index(of: minCount)!
+           print(minCount)
         }
         return minTotalCost
     }
     
-    func min(numbers:[Int],preMin:Int) -> Int {
+    func min(numbers:[Int],preIndex:Int) -> Int {
         if numbers.count != 3 {
             return -1;
         } else {
-            var shouldMin = min(numbers: numbers)
-            if shouldMin == preMin {
-                var muteNumberS = numbers
-                if let index = muteNumberS.index(of:preMin) {
-                    muteNumberS.remove(at: index)
-                    shouldMin = min(numbers: muteNumberS)
-                    
-                    if let index = muteNumberS.index(of:preMin) {
-                       muteNumberS.remove(at: index)
-                       shouldMin = min(numbers: muteNumberS)
-                    }
-                }
-            }
+            var tempNumbers = numbers;
+            tempNumbers.remove(at: preIndex)
+            let shouldMin = min(numbers: tempNumbers)
             return shouldMin
         }
     }
