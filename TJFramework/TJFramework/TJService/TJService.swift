@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-let baseURL = "https://pms-prod.igskapp.com/scorecardadmin/scorecard/webserviceReq"
+
 
 class TJService: NSObject {
     enum RequestResult {

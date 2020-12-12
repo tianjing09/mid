@@ -12,14 +12,18 @@ class TJThreeViewController: TJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = .blue
-
+        var b = self.block(number: 3) { (a) in
+            a * a
+        }
+        print("bbbb\(b)")
         // Do any additional setup after loading the view.
-        let param = ["module":"login","mudid":"XC134054","tokenId":"test mode"];
+        
         TJService.postRequestWithParam(param) { (response, result) in
             if (result == .success) {
                 if let dic = response,let tokenId = dic["statusMessage"],let t = tokenId as? String {
-                    let param1 = ["module":"getuserinfo","mudid":"XC134054","tokenId":t, "isOffline":"N"];
+                    
                     TJService.requestWithParam(param1, method: .post) { (response1, result1) in
                         if result1 == .success,let dic1 = response1?["resultData"],let data = dic1 as? [String:Any] {
                             let canUseApps = data["canUseApp"]
@@ -31,7 +35,32 @@ class TJThreeViewController: TJBaseViewController {
         }
         
     }
+    //54321
+    func bubbleSort(originalArray:inout [Int]) -> [Int] {
+        let count = originalArray.count
+        for i in 0...count - 2 {
+            var isChanged = false
+            let end = count - i - 2
+            for j in 0...end {
+                if originalArray[j] > originalArray[j+1] {
+                    isChanged = true
+                    (originalArray[j],originalArray[j+1]) = (originalArray[j+1],originalArray[j])
+                }
+            }
+            if isChanged == false {
+               break
+            }
+        }
+        return originalArray
+    }
     
+    func block(number:Int, multi:@escaping(Int) -> Void) -> Int{
+        DispatchQueue.main.asyncAfter(deadline: .now()+2.5) {
+            multi(number)
+            print("mmmmm")
+        }
+        return 8
+    }
 
     /*
     // MARK: - Navigation

@@ -19,13 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        //let a = minCost(withAllCostOption: [[3],[4],[21],[18],[7],[4]])
        // print(a)
         let d = ["jo":23,"ja":24]
-        let x = d.sorted{$0<$1}.map{$0}
-        
+        let x = d.sorted{$0.1<$1.1}.map{$0.0}
+       
         
         var list = ["a","b","c","d","e","f","g"]
         list[4...6] = ["5","6"]
         print(list)
         //fizzBuzz(n: 20)
+        
+        let nav = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = nav
+        window?.backgroundColor = .gray
+        window?.makeKeyAndVisible()
         return true
     }
 

@@ -15,15 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let button = UIButton(type: .contactAdd)
-        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+        button.frame = CGRect(x: 50, y: 150, width: 50, height: 50)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(push), for: .touchUpInside)
     }
 
     @objc private func push() {
-        self.present(TJStructureViewController(), animated: true) {
-            
-        }
+//        self.present(TJStructureViewController(), animated: true) {
+//            
+//        }
+        self.navigationController?.pushViewController(TJStructureViewController(), animated: true)
     }
 }
 
