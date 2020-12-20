@@ -1,8 +1,18 @@
 PODS:
   - Alamofire (4.7.3)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - CryptoSwift (1.3.8)
   - KeychainAccess (3.1.1)
   - Kingfisher (4.9.0)
+  - ObjectMapper (3.5.3)
   - OpenShare (0.0.1)
+  - RxAlamofire (4.3.0):
+    - RxAlamofire/Core (= 4.3.0)
+  - RxAlamofire/Core (4.3.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
@@ -10,22 +20,43 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireObjectMapper
+  - CryptoSwift
   - KeychainAccess
   - Kingfisher
   - OpenShare
+  - RxAlamofire
   - RxCocoa
   - RxSwift
   - SnapKit
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - CryptoSwift
+    - KeychainAccess
+    - Kingfisher
+    - ObjectMapper
+    - OpenShare
+    - RxAlamofire
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
+  RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 14544c20bf597fff0ff80e1adeca2ba1900df4ac
+PODFILE CHECKSUM: 483dcd4ae4f64c0334e7f02bf50f92175ad6cfd7
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.10.0

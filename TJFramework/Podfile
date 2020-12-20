@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 def shared_pods
@@ -11,6 +11,9 @@ def shared_pods
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'SnapKit'
+    pod 'AlamofireObjectMapper'
+    pod 'RxAlamofire'
+    pod 'CryptoSwift'
 end
 
 target 'TJFramework' do

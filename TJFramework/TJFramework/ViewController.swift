@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         button.frame = CGRect(x: 50, y: 150, width: 50, height: 50)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(push), for: .touchUpInside)
+        let observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault,0, true, 0) { (observer, activity) in
+            print("ddd\(activity)")
+        }
+        CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, CFRunLoopMode.defaultMode)
+        
     }
 
     @objc private func push() {

@@ -68,7 +68,7 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
     lazy var rightBgView: UIView = {
         let view = UIView.init(frame: CGRect(x: 200, y: 0, width: self.viewWidth, height: self.viewHeight - 33))
         view.backgroundColor = .gray
-        view.addSubview(self.topBgView)
+        //view.addSubview(self.topBgView)
         view.addSubview(self.bottomBgView)
         view.isUserInteractionEnabled = true
         return view
@@ -96,6 +96,17 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
         return button
     }()
     
+    lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(menu))
+        return button
+    }()
+    
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(reset))
+        return button
+    }()
+    
+    
     lazy var resetButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 200, y: 0, width: 60, height: 44))
         button.setTitle("reset", for: .normal)
@@ -109,6 +120,9 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.view.addSubview(self.bgView)
+        self.navigationItem.leftBarButtonItem = leftButton
+        self.navigationItem.rightBarButtonItem = rightButton
+        self.navigationItem.title = "TJStructure"
         self.addGesture()
         self.freshStructure()
         // Do any additional setup after loading the view.
@@ -159,7 +173,14 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func reset() {
         if (self.selectVcIndex == 0) {
-           self.type = 2
+//           let randomNumber = Int(arc4random() % 3)
+//           self.type = randomNumber
+           if self.type == 1 {
+             self.type = 2
+           } else {
+             self.type = 1
+           }
+            
            self.freshStructure()
         }
     }

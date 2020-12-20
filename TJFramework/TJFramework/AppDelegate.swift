@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(list)
         //fizzBuzz(n: 20)
         
-        let nav = UINavigationController(rootViewController: ViewController())
+        let nav = UINavigationController(rootViewController: TJStructureViewController())
         window?.rootViewController = nav
         window?.backgroundColor = .gray
         window?.makeKeyAndVisible()
