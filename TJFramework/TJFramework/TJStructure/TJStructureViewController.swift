@@ -162,8 +162,8 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
         }
         self.selectVcIndex = 0
         if (type == 1) {
-            self.vcs = [TJOneViewController(), TJTwoViewController(), TJThreeViewController(),TJSnapViewController(),TJRxSwiftViewController()]
-            self.menus = [["name":"colorfulBar"],["name":"mutiSelect"],["name":"alamofire"],["name":"snapkit"],["name":"RxSwift"]]
+            self.vcs = [TJRxDifficultViewController(),TJOneViewController(), TJTwoViewController(), TJThreeViewController(),TJSnapViewController(),TJRxSwiftViewController()]
+            self.menus = [["name":"rxdifficult"],["name":"colorfulBar"],["name":"mutiSelect"],["name":"alamofire"],["name":"snapkit"],["name":"RxSwift"]]
         } else {
             self.vcs = [TJOneViewController(), TJThreeViewController(), TJTwoViewController()]
             self.menus = [["name":"one"],["name":"three"],["name":"two"]]

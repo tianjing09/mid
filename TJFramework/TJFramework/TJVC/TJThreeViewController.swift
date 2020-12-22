@@ -84,7 +84,7 @@ class TJThreeViewController: TJBaseViewController {
         }
         print("bbbb\(b)")
         
-        beginService()
+        //beginService()
     }
     
     func beginService() {
