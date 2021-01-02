@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TJCircleView: UIView {
+ class TJCircleView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -28,11 +28,11 @@ class TJCircleView: UIView {
         super.init(frame: frame)
         width = frame.size.width
         height = frame.size.height
-        let view = UIView.init(frame: CGRect(x: 10, y: 10, width: width - 20, height: height - 20))
-        view.layer.cornerRadius = (width - 20) / 2
-        view.layer.borderColor = UIColor.yellow.cgColor
-        view.layer.borderWidth = 40
-        self.addSubview(view)
+//        let view = UIView.init(frame: CGRect(x: 10, y: 10, width: width - 20, height: height - 20))
+//        view.layer.cornerRadius = (width - 20) / 2
+//        view.layer.borderColor = UIColor.yellow.cgColor
+//        view.layer.borderWidth = 40
+//        self.addSubview(view)
     }
     
     required init?(coder aDecoder: NSCoder) {

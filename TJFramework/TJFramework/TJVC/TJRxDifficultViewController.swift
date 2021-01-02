@@ -26,8 +26,8 @@ class TJRxDifficultViewController: TJBaseViewController {
         //doDefer()
         //publish()
         //mapAndFlat()
-        driver()
-        //bindd()
+        //driver()
+        bindd()
     }
     
     func emptyExample() {
@@ -38,6 +38,7 @@ class TJRxDifficultViewController: TJBaseViewController {
         onCompleted: {
            print("empty completed")
         })
+        
     }
     func nextDiff() {
         let observable = Observable.of("a","b","c")
@@ -113,12 +114,12 @@ class TJRxDifficultViewController: TJBaseViewController {
     
     func publish() {
         var a = 3
-        let b = 33
-        print(String.init(format: "%p", b))
+//        let b = 33
+//        print(String.init(format: "%p", b))
         let myJust = { (element: String) -> Observable<String> in
             return Observable.create { observer -> Disposable in
                 a = a + 1
-                var ass = "\(element)\(a)"
+                let ass = "\(element)\(a)"
                 observer.on(.next(ass))
                 return Disposables.create()
             }.share()
@@ -135,7 +136,7 @@ class TJRxDifficultViewController: TJBaseViewController {
             withUnsafePointer(to: event) { pointer in
                 print(pointer)
             }
-        }.disposed(by: DisposeBag())
+        }.disposed(by: disposeBag)
         
         j.subscribe {
             print($0)
@@ -143,7 +144,7 @@ class TJRxDifficultViewController: TJBaseViewController {
             withUnsafePointer(to: $0) { pointer in
                 print(pointer)
             }
-        }.disposed(by: DisposeBag())
+        }.disposed(by: disposeBag)
         
         j.subscribe {
             print($0)
@@ -151,7 +152,7 @@ class TJRxDifficultViewController: TJBaseViewController {
             withUnsafePointer(to: $0) { pointer in
                 print(pointer)
             }
-        }.disposed(by: DisposeBag())
+        }.disposed(by: disposeBag)
     }
     
     func share() {
@@ -222,18 +223,18 @@ class TJRxDifficultViewController: TJBaseViewController {
                 print("vvv")
                 return  "\(event)+1"
             }
-            .asDriver(onErrorJustReturn: "")
-            //.share(replay: 1)
+            //.asDriver(onErrorJustReturn: "")
+            .share(replay: 1)
         
         
         usernameValid.map({ event -> String in
             return "\(event)+1"
         })
-            .drive(nameLabel.rx.text)
+            .bind(to:nameLabel.rx.text)
             .disposed(by: disposeBag)
         
         usernameValid
-            .drive(countLabel.rx.text)
+            .bind(to:countLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

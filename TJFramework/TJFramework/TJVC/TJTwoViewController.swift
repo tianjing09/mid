@@ -22,17 +22,22 @@ class TJTwoViewController: TJBaseViewController, TJMutiSelectViewDelegate {
         selectView.delegate = self
         self.view.addSubview(selectView)
         selectView.refreshView(data: ["1","2","3","4","5"])
+        _ = Test1()
+        _ = Test2(a: "1", b: 2)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+class Test1 {
+    var a: String = ""
+    var  b: Int?
+//    init(_ a: String) {
+//        self.a = a
+//    }
+}
+
+struct Test2 {
+    var a: String
+    var  b: Int
+}
+

@@ -26,7 +26,16 @@
 		3F85C050219D0B1100994EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F85C04E219D0B1100994EF9 /* LaunchScreen.storyboard */; };
 		3F85C05B219D0B1100994EF9 /* TJFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C05A219D0B1100994EF9 /* TJFrameworkTests.swift */; };
 		3F85C066219D0B1100994EF9 /* TJFrameworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85C065219D0B1100994EF9 /* TJFrameworkUITests.swift */; };
-		FC956E7D2B74D60B114A0254 /* Pods_TJFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */; };
+		7616C91225977479008A5EEC /* TJRxRestartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616C91025977479008A5EEC /* TJRxRestartViewController.swift */; };
+		7616C91325977479008A5EEC /* TJRxRestartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7616C91125977479008A5EEC /* TJRxRestartViewController.xib */; };
+		76202A29259B118400C97393 /* DynamicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202A27259B117B00C97393 /* DynamicSDK.framework */; };
+		76202A2A259B118400C97393 /* DynamicSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202A27259B117B00C97393 /* DynamicSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76202B03259B2FA600C97393 /* Doctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B01259B2F9B00C97393 /* Doctor.framework */; };
+		76202B04259B2FA600C97393 /* Doctor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B01259B2F9B00C97393 /* Doctor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; };
+		76202B37259B74A700C97393 /* DynamicSDK1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		769DDEEB2591BA18003DECBD /* TJRxDifficultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769DDEEA2591BA18003DECBD /* TJRxDifficultViewController.xib */; };
+		76B1F26B2590C18100CAACD5 /* TJRxDifficultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1F26A2590C18100CAACD5 /* TJRxDifficultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,22 @@
 			remoteInfo = TJFramework;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		762029DC259B074B00C97393 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				76202A2A259B118400C97393 /* DynamicSDK.framework in Embed Frameworks */,
+				76202B04259B2FA600C97393 /* Doctor.framework in Embed Frameworks */,
+				76202B37259B74A700C97393 /* DynamicSDK1.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F054933219D13E500060BBF /* TJServiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TJServiceDefine.h; sourceTree = "<group>"; };
@@ -73,6 +98,13 @@
 		3F85C061219D0B1100994EF9 /* TJFrameworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TJFrameworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F85C065219D0B1100994EF9 /* TJFrameworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJFrameworkUITests.swift; sourceTree = "<group>"; };
 		3F85C067219D0B1100994EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7616C91025977479008A5EEC /* TJRxRestartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRxRestartViewController.swift; sourceTree = "<group>"; };
+		7616C91125977479008A5EEC /* TJRxRestartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TJRxRestartViewController.xib; sourceTree = "<group>"; };
+		76202A27259B117B00C97393 /* DynamicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK.framework; sourceTree = "<group>"; };
+		76202B01259B2F9B00C97393 /* Doctor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Doctor.framework; sourceTree = "<group>"; };
+		76202B34259B749900C97393 /* DynamicSDK1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK1.framework; sourceTree = "<group>"; };
+		769DDEEA2591BA18003DECBD /* TJRxDifficultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TJRxDifficultViewController.xib; sourceTree = "<group>"; };
+		76B1F26A2590C18100CAACD5 /* TJRxDifficultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRxDifficultViewController.swift; sourceTree = "<group>"; };
 		E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TJFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F33EE86A082573F77DD406 /* Pods-TJFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TJFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TJFramework/Pods-TJFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		F9DA9A46ADFF04246BE2A779 /* Pods-TJFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TJFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-TJFramework/Pods-TJFramework.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC956E7D2B74D60B114A0254 /* Pods_TJFramework.framework in Frameworks */,
+				76202A29259B118400C97393 /* DynamicSDK.framework in Frameworks */,
+				76202B03259B2FA600C97393 /* Doctor.framework in Frameworks */,
+				76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +164,10 @@
 				3F05494C21A24DAA00060BBF /* TJThreeViewController.swift */,
 				3F3685A12333274800EA4A9A /* TJSnapViewController.swift */,
 				3F3685A32333276C00EA4A9A /* TJRxSwiftViewController.swift */,
+				76B1F26A2590C18100CAACD5 /* TJRxDifficultViewController.swift */,
+				769DDEEA2591BA18003DECBD /* TJRxDifficultViewController.xib */,
+				7616C91025977479008A5EEC /* TJRxRestartViewController.swift */,
+				7616C91125977479008A5EEC /* TJRxRestartViewController.xib */,
 			);
 			path = TJVC;
 			sourceTree = "<group>";
@@ -214,6 +252,9 @@
 		C8EE3C86E60B5F0613A6379D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76202B34259B749900C97393 /* DynamicSDK1.framework */,
+				76202B01259B2F9B00C97393 /* Doctor.framework */,
+				76202A27259B117B00C97393 /* DynamicSDK.framework */,
 				E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */,
 			);
 			name = Frameworks;
@@ -231,6 +272,7 @@
 				3F85C03F219D0B0E00994EF9 /* Frameworks */,
 				3F85C040219D0B0E00994EF9 /* Resources */,
 				E77CAC70AD39F408546A8B45 /* [CP] Embed Pods Frameworks */,
+				762029DC259B074B00C97393 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,7 +326,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "jing 田";
 				TargetAttributes = {
 					3F85C041219D0B0E00994EF9 = {
@@ -326,8 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F85C050219D0B1100994EF9 /* LaunchScreen.storyboard in Resources */,
+				769DDEEB2591BA18003DECBD /* TJRxDifficultViewController.xib in Resources */,
 				3F85C04D219D0B1100994EF9 /* Assets.xcassets in Resources */,
 				3F85C04B219D0B0E00994EF9 /* Main.storyboard in Resources */,
+				7616C91325977479008A5EEC /* TJRxRestartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,12 +440,14 @@
 				3F05495421A3E2CF00060BBF /* TJColorfulBarView.swift in Sources */,
 				3F054944219EA96900060BBF /* TJStructureViewController.swift in Sources */,
 				3F3685A22333274800EA4A9A /* TJSnapViewController.swift in Sources */,
+				7616C91225977479008A5EEC /* TJRxRestartViewController.swift in Sources */,
 				3F05495821A7976E00060BBF /* TJMutiSelectView.swift in Sources */,
 				3F05494D21A24DAA00060BBF /* TJThreeViewController.swift in Sources */,
 				3F85C048219D0B0E00994EF9 /* ViewController.swift in Sources */,
 				3F05494921A24D7600060BBF /* TJOneViewController.swift in Sources */,
 				3F05493E219D707300060BBF /* TJService.swift in Sources */,
 				3F05495221A3E28F00060BBF /* TJColorfulBar.swift in Sources */,
+				76B1F26B2590C18100CAACD5 /* TJRxDifficultViewController.swift in Sources */,
 				3F3685A42333276C00EA4A9A /* TJRxSwiftViewController.swift in Sources */,
 				3F85C046219D0B0E00994EF9 /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +530,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -546,6 +593,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -583,8 +631,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q7Q8A562Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TJFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,8 +655,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q7Q8A562Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TJFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

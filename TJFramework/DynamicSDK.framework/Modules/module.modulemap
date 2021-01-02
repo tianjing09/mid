@@ -1,0 +1,4 @@
+framework module DynamicSDK {
+  header "DynamicSDK-Swift.h"
+  requires objc
+}

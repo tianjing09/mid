@@ -1,0 +1,4 @@
+framework module Doctor {
+  header "Doctor-Swift.h"
+  requires objc
+}
