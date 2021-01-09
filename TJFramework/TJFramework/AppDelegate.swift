@@ -27,13 +27,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(list)
         //fizzBuzz(n: 20)
         
+        print(TJMD5.encryptyMD5(with: "tianjing田静"))
+        print(TJBase64.encodeToBase64(with: "tianjing田静tianjing田静"))
+        print(TJBase64.decode(base64String: "dGlhbmppbmfnlLDpnZl0aWFuamluZ+eUsOmdmQ=="))
+        print(TJSHA.sha512(with: "tianjing田静"))
+        print(TJSHA.sha256(with: "tianjing田静"))
+        jsonToModel()
+        jsonToDic()
         let nav = UINavigationController(rootViewController: TJStructureViewController())
         window?.rootViewController = nav
         window?.backgroundColor = .gray
         window?.makeKeyAndVisible()
         return true
     }
+    
+    func jsonToModel() {
+        let jsonString = """
+        {
+            "name": "Kody",
+            "className": "Swift",
+            "courceCycle": 10,
+            "personInfo": [
+                {
+                   "age": 18,
+                   "height": 1.85
+                },{
+                   "age": 20,
+                   "height": 1.75
+                }
+            ]
+        }
+        """
 
+        let jsonData = jsonString.data(using: .utf8)
+        let decoder = JSONDecoder()
+        if let data = jsonData{
+            let result = try? decoder.decode(Teacher.self, from: data)
+            print(result ?? "解析失败")
+        }
+    }
+    func jsonToDic() {
+        let
+        jsonstr="{\"status\":\"1\",\"data\":{\"udid\":\"5bce8b974adbc6a60858d41657f1761305f62ce9\",\"time\":\"1580546728\",\"orderid\":\"20200201164519672\"}}"
+        let jsondata = jsonstr.data(using: .utf8)
+
+
+        do {
+            let ok =  try JSONSerialization.jsonObject(with: jsondata!, options: .mutableContainers) as AnyObject
+            
+            let status:String=ok["status"] as! String
+            
+        } catch {
+                print(error)
+            }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

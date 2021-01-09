@@ -26,9 +26,41 @@ class TJRxDifficultViewController: TJBaseViewController {
         //doDefer()
         //publish()
         //mapAndFlat()
-        //driver()
-        bindd()
+       // driver()
+       // bindd()
+        fromLatest()
     }
+    
+    func fromLatest() {
+        let pb1 = PublishSubject<Int>()
+        let pb2 = PublishSubject<Int>()
+
+        pb1.withLatestFrom(pb2)
+            .subscribe { event in
+                switch event {
+                case .next(let element):
+                    print("element:", element)
+                case .error(let error):
+                    print("error:", error)
+                case .completed:
+                    print("completed")
+                }}
+            .disposed(by: disposeBag)
+
+        pb2.onNext(2)
+        pb1.onNext(1)//2
+        pb1.onNext(11)//2
+        pb2.onNext(22)
+        pb2.onNext(222)
+        pb1.onNext(111)//222
+        pb1.onNext(111)//222
+        pb2.onNext(3)
+        pb2.onNext(33)
+        pb1.onNext(111)//33
+        pb1.onNext(111)//33
+        
+        
+    }//pb1是依赖于pb2的，当pb2有新值的时候再发送pb1就能得到pb2发送出来的值了，且只能得到pb2
     
     func emptyExample() {
         let observable = Observable<Void>.empty()
@@ -122,7 +154,8 @@ class TJRxDifficultViewController: TJBaseViewController {
                 let ass = "\(element)\(a)"
                 observer.on(.next(ass))
                 return Disposables.create()
-            }.share()
+            }
+            .share()
         }
         let j = myJust("j")
         j.subscribe { event in
@@ -196,10 +229,10 @@ class TJRxDifficultViewController: TJBaseViewController {
         result.map { event -> String in
            return "count:\(event.count)"
         }.drive(self.countLabel.rx.text).disposed(by: disposeBag)
-        
-        result.map {event -> String in
-            return "name:\(event)"
-        }.drive(nameLabel.rx.text).disposed(by: disposeBag)
+
+//        result.map {event -> String in
+//            return "name:\(event)"
+//        }.drive(nameLabel.rx.text).disposed(by: disposeBag)
     }
     
     func dealWithData(query:String) -> Observable<String> {

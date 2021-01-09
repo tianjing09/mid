@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-
+let baseURL = "https://pms-prod.igskapp.com/scorecardadmin/scorecard/webserviceReq"
 
 class TJService: NSObject {
     enum RequestResult {
@@ -21,7 +21,6 @@ class TJService: NSObject {
         let mudid = param["mudid"]
         let timeStamp = Date.init().timeIntervalSince1970
         process["bpinfo"] = "\(mudid ?? "aa")_\(integer_t(timeStamp))_1.3"
-        print("request param:\(process)")
         Alamofire.request(baseURL, method: method, parameters: process).responseData { response in
             print("result param:\(process)")
             if let oData = response.result.value {
@@ -59,6 +58,34 @@ class TJService: NSObject {
     static func postRequestWithParam(_ param:[String:Any], complete:@escaping ([String:Any]?,RequestResult) -> Void) {
         TJService.requestWithParam(param, method: .post) { (result, message) in
             complete(result, message)
+        }
+    }
+    
+    static func requestWithURL(_ url:String,param:[String:Any],method:HTTPMethod, complete:@escaping ([String:Any]?,RequestResult) -> Void) {
+        
+        Alamofire.request(url, method: method, parameters: param).responseData { response in
+            if let oData = response.result.value {
+//                let enc = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_18030_2000.rawValue))
+//                let gbString = String(data: oData, encoding: String.Encoding(rawValue: enc))
+//                if let str = gbString, let data = str.data(using: .utf8) {
+                    if let dicc = try? JSONSerialization.jsonObject(with: oData, options: .mutableContainers) {
+                        if let process = dicc as? Dictionary<String, Any> {
+                            //print("success")
+                            NSLog("success")
+                            complete(process,.success)
+                        } else {
+                            complete(nil,.parseError)
+                            print("convert dic fail")
+                        }
+                    } else {
+                        complete(nil,.parseError)
+                        print("convert json fail")
+                    }
+                
+            } else {
+                complete(nil,.fail)
+                print("convert data fail")
+            }
         }
     }
 }
