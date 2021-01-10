@@ -127,8 +127,7 @@ class TJRXDemoViewController: TJBaseViewController {//,
     }
     
     func initViewModel() {
-        viewModel = TJGithubViewModel(input:
-                                        (searchText: searchBar.rx.text.orEmpty.asDriver(), loadPageTrigger: Observable.of(1).asDriver(onErrorJustReturn: 1)))
+        
        
     }
 

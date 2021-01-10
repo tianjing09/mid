@@ -34,6 +34,7 @@
 		76202B04259B2FA600C97393 /* Doctor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B01259B2F9B00C97393 /* Doctor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; };
 		76202B37259B74A700C97393 /* DynamicSDK1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */; };
 		764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BC72025A9388500A9257E /* TJGithhubViewController.swift */; };
 		766A015325A426CB00AC682B /* TJEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015225A426CB00AC682B /* TJEncrypt.swift */; };
 		766A015B25A6CC3D00AC682B /* TJRXDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */; };
@@ -107,6 +108,7 @@
 		76202A27259B117B00C97393 /* DynamicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK.framework; sourceTree = "<group>"; };
 		76202B01259B2F9B00C97393 /* Doctor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Doctor.framework; sourceTree = "<group>"; };
 		76202B34259B749900C97393 /* DynamicSDK1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK1.framework; sourceTree = "<group>"; };
+		7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJMVVMViewController.swift; sourceTree = "<group>"; };
 		764BC72025A9388500A9257E /* TJGithhubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJGithhubViewController.swift; sourceTree = "<group>"; };
 		766A015225A426CB00AC682B /* TJEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJEncrypt.swift; sourceTree = "<group>"; };
 		766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXDemoViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				7616C91125977479008A5EEC /* TJRxRestartViewController.xib */,
 				766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */,
 				764BC72025A9388500A9257E /* TJGithhubViewController.swift */,
+				7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */,
 			);
 			path = TJVC;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				3F05494621A245C800060BBF /* TJBaseViewController.swift in Sources */,
 				3F05495421A3E2CF00060BBF /* TJColorfulBarView.swift in Sources */,
 				3F054944219EA96900060BBF /* TJStructureViewController.swift in Sources */,
+				7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */,
 				3F3685A22333274800EA4A9A /* TJSnapViewController.swift in Sources */,
 				764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */,
 				7616C91225977479008A5EEC /* TJRxRestartViewController.swift in Sources */,

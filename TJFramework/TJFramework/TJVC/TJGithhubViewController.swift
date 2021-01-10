@@ -139,9 +139,12 @@ class TJGithhubViewController: TJBaseViewController {
             return self.searchLists
         }
         
-        lists.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-            cell.textLabel?.text = "\(element.htmlURL ?? "no url") @ row \(row)"
-        }.disposed(by: bag)
+        DispatchQueue.main.async {
+            lists.bind(to: self.tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
+                cell.textLabel?.text = "\(element.htmlURL ?? "no url") @ row \(row)"
+            }.disposed(by: self.bag)
+        }
+        
 
         
 //        Observable.combineLatest(searchSignal,triggerObservable) { (text, page) -> TJGithubState in
