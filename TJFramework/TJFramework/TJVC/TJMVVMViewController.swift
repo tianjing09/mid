@@ -40,25 +40,28 @@ class TJMVVMViewController: TJBaseViewController {
     func bindModel() {
         let searchSignal = searchBar.rx.text.orEmpty.asObservable()
 
-        let triggerObservable =             self.tableView.rx.contentOffset.asObservable().flatMapLatest { (_) -> Observable<Int> in
+        let triggerObservable =             self.tableView.rx.contentOffset.asObservable()
+            .flatMapLatest { (_) -> Observable<Int> in
             if  self.tableView.isNearBottomEdge() {
                 //print("11111")
                 return Observable.just(1)
             }
            // print("empty")
             return Observable.empty()
-        }.startWith(1209)
+           }
+           .startWith(1209)
         
         viewModel = TJGithubViewModel(input: (searchText: searchSignal, loadPageTrigger: triggerObservable))
         
         DispatchQueue.main.async {
-            self.viewModel?.searchListDriver.bind(to: self.tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
+            self.viewModel?.searchListDriver
+            .bind(to: self.tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.htmlURL ?? "no url") @ row \(row)"
-            }.disposed(by: self.bag)
+            }
+            .disposed(by: self.bag)
         }
     }
     
-   
     func addSubviews() {
         self.view.addSubview(searchBar)
         searchBar.snp.makeConstraints { (make) in
@@ -74,6 +77,6 @@ class TJMVVMViewController: TJBaseViewController {
             make.top.equalTo(searchBar.snp_bottom).offset(10)
             make.bottom.equalTo(-10)
         }
-}
+   }
 
 }

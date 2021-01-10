@@ -44,7 +44,9 @@ class TJGithubViewModel {
    
     init(input: (searchText: Observable<String>,
                  loadPageTrigger: Observable<Int>)) {
-        let searchSignal = input.searchText.throttle(0.4, scheduler: MainScheduler.instance).map { [weak self](text) -> String in
+        let searchSignal = input.searchText
+            .throttle(0.4, scheduler: MainScheduler.instance)
+            .map { [weak self](text) -> String in
             print("search signal")
             self!.state.searchText = text
             self!.state.page = 1
@@ -53,12 +55,14 @@ class TJGithubViewModel {
             return text
         }
         
-        let triggerObservable = input.loadPageTrigger.filter {page -> Bool in
+        let triggerObservable = input.loadPageTrigger
+            .filter {page -> Bool in
             if page == 1209 {
                 return true
             }
             return !self.state.isDownLoading
-        }.map { (page) -> Int in
+            }
+            .map { (page) -> Int in
             print("trigger signal")
             self.state.isDownLoading = true
             if page != 1209 {
@@ -69,15 +73,19 @@ class TJGithubViewModel {
         
         searchListDriver = Observable.combineLatest(searchSignal,triggerObservable) { (text, page) -> TJGithubState in
             return TJGithubState(page: page, searchText: text)
-        }.filter { (t) -> Bool in
+        }
+        .filter { (t) -> Bool in
             print("filter:\(t)")
             if t.searchText.count == 0 {
               self.state.isDownLoading = false
             }
             return t.searchText.count > 0
-        }.distinctUntilChanged().flatMapLatest { (state) -> Observable<[TJGithubModel]> in
+        }
+        .distinctUntilChanged()
+        .flatMapLatest { (state) -> Observable<[TJGithubModel]> in
            return Service.requestWithText(state.searchText, page: state.page)
-        }.map { (model) -> [TJGithubModel] in
+        }
+        .map { (model) -> [TJGithubModel] in
             print(model.count)
             self.state.searchLists.append(contentsOf: model)
             print(self.state.searchLists.count)
@@ -87,8 +95,6 @@ class TJGithubViewModel {
         
     }
 }
-
-
 
 class Service {
     static func requestWithText(_ text: String, page: Int) -> Observable<[TJGithubModel]> {
@@ -103,7 +109,7 @@ class Service {
                      obj.onNext(model)
                      obj.onCompleted()
                  } else {
-                    NSLog("on error")
+                    print("on error")
                      obj.onError(NSError(domain: "dddd", code: 1, userInfo: nil))
                  }
              }
