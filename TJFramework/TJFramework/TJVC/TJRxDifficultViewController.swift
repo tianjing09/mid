@@ -15,6 +15,8 @@ class TJRxDifficultViewController: TJBaseViewController {
     @IBOutlet weak var tf: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var bt: UIButton!
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -28,7 +30,23 @@ class TJRxDifficultViewController: TJBaseViewController {
         //mapAndFlat()
        // driver()
        // bindd()
-        fromLatest()
+       // fromLatest()
+        uiTest()
+    }
+    
+    func uiTest() {
+        bt.rx.tap.subscribe(onNext: { _ in
+            print("tap按钮被点击")
+            Observable.of("dddd")
+                .bind(to: self.bt.rx.title(for: .normal))
+                .disposed(by: self.disposeBag)
+        })
+        .disposed(by: disposeBag)
+        
+        bt.rx.tap.bind{ _ in
+            print("bind按钮被点击")
+        }
+        .disposed(by: disposeBag)
     }
     
     func fromLatest() {

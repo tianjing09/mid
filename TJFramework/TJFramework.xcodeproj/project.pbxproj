@@ -35,6 +35,8 @@
 		76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; };
 		76202B37259B74A700C97393 /* DynamicSDK1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */; };
+		7640590925AAEB53002DF434 /* TJRXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590825AAEB53002DF434 /* TJRXExtension.swift */; };
+		7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590E25AB056D002DF434 /* TJRX1View.swift */; };
 		764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BC72025A9388500A9257E /* TJGithhubViewController.swift */; };
 		766A015325A426CB00AC682B /* TJEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015225A426CB00AC682B /* TJEncrypt.swift */; };
 		766A015B25A6CC3D00AC682B /* TJRXDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */; };
@@ -109,6 +111,8 @@
 		76202B01259B2F9B00C97393 /* Doctor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Doctor.framework; sourceTree = "<group>"; };
 		76202B34259B749900C97393 /* DynamicSDK1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK1.framework; sourceTree = "<group>"; };
 		7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJMVVMViewController.swift; sourceTree = "<group>"; };
+		7640590825AAEB53002DF434 /* TJRXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXExtension.swift; sourceTree = "<group>"; };
+		7640590E25AB056D002DF434 /* TJRX1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRX1View.swift; sourceTree = "<group>"; };
 		764BC72025A9388500A9257E /* TJGithhubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJGithhubViewController.swift; sourceTree = "<group>"; };
 		766A015225A426CB00AC682B /* TJEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJEncrypt.swift; sourceTree = "<group>"; };
 		766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXDemoViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				3F05495321A3E2CF00060BBF /* TJColorfulBarView.swift */,
 				3F05495521A6517E00060BBF /* TJCircleView.swift */,
 				3F05495721A7976E00060BBF /* TJMutiSelectView.swift */,
+				7640590E25AB056D002DF434 /* TJRX1View.swift */,
 			);
 			path = TJView;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				766A015225A426CB00AC682B /* TJEncrypt.swift */,
+				7640590825AAEB53002DF434 /* TJRXExtension.swift */,
 			);
 			path = TJCommon;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */,
 				3F3685A22333274800EA4A9A /* TJSnapViewController.swift in Sources */,
 				764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */,
+				7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */,
 				7616C91225977479008A5EEC /* TJRxRestartViewController.swift in Sources */,
 				3F05495821A7976E00060BBF /* TJMutiSelectView.swift in Sources */,
 				3F05494D21A24DAA00060BBF /* TJThreeViewController.swift in Sources */,
@@ -484,6 +491,7 @@
 				3F05493E219D707300060BBF /* TJService.swift in Sources */,
 				3F05495221A3E28F00060BBF /* TJColorfulBar.swift in Sources */,
 				76B1F26B2590C18100CAACD5 /* TJRxDifficultViewController.swift in Sources */,
+				7640590925AAEB53002DF434 /* TJRXExtension.swift in Sources */,
 				3F3685A42333276C00EA4A9A /* TJRxSwiftViewController.swift in Sources */,
 				3F85C046219D0B0E00994EF9 /* AppDelegate.swift in Sources */,
 			);

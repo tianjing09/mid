@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TJRxDifficultViewController" customModule="TJFramework" customModuleProvider="target">
             <connections>
+                <outlet property="bt" destination="JRp-Qa-S8N" id="6B4-J8-2RD"/>
                 <outlet property="countLabel" destination="3z3-Mp-sbX" id="d2K-ji-wJb"/>
                 <outlet property="nameLabel" destination="M75-gN-lPZ" id="e1x-xE-lNS"/>
                 <outlet property="tf" destination="Vjd-Z4-cPv" id="3PS-3m-q8d"/>
@@ -55,16 +56,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRp-Qa-S8N">
+                    <rect key="frame" x="27" y="332" width="105" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="cMi-Hm-yVM"/>
+                        <constraint firstAttribute="height" constant="37" id="vyG-lY-97Z"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="3z3-Mp-sbX" firstAttribute="top" secondItem="M75-gN-lPZ" secondAttribute="bottom" constant="22" id="8Lz-rt-80F"/>
                 <constraint firstItem="Vjd-Z4-cPv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="44" id="FDC-AH-wdV"/>
+                <constraint firstItem="JRp-Qa-S8N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="HQ6-6L-CMD"/>
                 <constraint firstItem="M75-gN-lPZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="Rye-6i-Kbd"/>
                 <constraint firstItem="Vjd-Z4-cPv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Vic-1n-6NL"/>
                 <constraint firstItem="3z3-Mp-sbX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="lsu-zF-T80"/>
                 <constraint firstItem="M75-gN-lPZ" firstAttribute="top" secondItem="Vjd-Z4-cPv" secondAttribute="bottom" constant="40" id="mKT-V4-Ysi"/>
+                <constraint firstItem="JRp-Qa-S8N" firstAttribute="top" secondItem="3z3-Mp-sbX" secondAttribute="bottom" constant="42" id="yMj-BT-Gv1"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="42.857142857142854"/>
         </view>
