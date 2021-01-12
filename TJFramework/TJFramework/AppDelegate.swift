@@ -7,12 +7,18 @@
 //
 
 import UIKit
+struct TJState {
+    var page = 1
+    var searchText = ""
+    var isDownLoading = false
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var model = TJState()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         list[4...6] = ["5","6"]
         print(list)
         //fizzBuzz(n: 20)
+//        let ddd = TJState()
+//        ddd.page = 1209//Cannot assign to property: 'ddd' is a 'let' constant
         
         print(TJMD5.encryptyMD5(with: "tianjing田静"))
         print(TJBase64.encodeToBase64(with: "tianjing田静tianjing田静"))
@@ -34,12 +42,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(TJSHA.sha256(with: "tianjing田静"))
         jsonToModel()
         jsonToDic()
+        print(model.page)
+        modifyStruct(a: &model)
+        print(model.page)
+        modifyStruct1(a: model)
+        print(model.page)
         let nav = UINavigationController(rootViewController: TJStructureViewController())
         window?.rootViewController = nav
         window?.backgroundColor = .gray
         window?.makeKeyAndVisible()
         return true
     }
+//    func modifyClass(a: TJState)  {
+//        a.isDownLoading = true
+//        a.page = 1209
+//    }//Cannot assign to property: 'a' is a 'let' constant
+    
+    func modifyStruct(a: inout TJState) {
+        a.isDownLoading = true
+        a.page = 1209
+    }
+    
+    func modifyStruct1(a: TJState) {
+        NSLog("\(a)")
+        var aa = a
+        aa.isDownLoading = true
+        aa.page = 0129
+    }
+    
     
     func jsonToModel() {
         let jsonString = """

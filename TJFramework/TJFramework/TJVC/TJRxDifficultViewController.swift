@@ -87,7 +87,7 @@ class TJRxDifficultViewController: TJBaseViewController {
         },
         onCompleted: {
            print("empty completed")
-        })
+        }).disposed(by: disposeBag)
         
     }
     func nextDiff() {
