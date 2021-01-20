@@ -31,7 +31,8 @@ class TJRxDifficultViewController: TJBaseViewController {
        // driver()
        // bindd()
        // fromLatest()
-        uiTest()
+       // uiTest()
+        reply()
     }
     
     func uiTest() {
@@ -117,7 +118,52 @@ class TJRxDifficultViewController: TJBaseViewController {
             print("dispose never")
         }).dispose()
     }
+    func reply() {
+        let br: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+        br.accept(["ddd"])
+        let ob = br.asObservable()
+        //let dr = ob.asDriver(onErrorJustReturn: [])
     
+        ob.subscribe { (result) in
+            print("111:\(result)")
+        }.disposed(by: disposeBag)
+
+        
+        br.accept(["ccc"])
+        br.accept(["eee"])
+
+        
+        
+//        var r = br.value
+//        r.append("ccc")
+//        br.accept(r)
+//
+        let sss = br.asObservable().map { (result) -> Bool in
+            print("fffff---\(result)")
+            return result.count > 0
+        }
+        //.asDriver(onErrorJustReturn: false)
+        .skip(1)
+
+//        sss.subscribe { (c) in
+//            print("333:\(c)")
+//        }.disposed(by: disposeBag)
+//        sss.drive(nameLabel.rx.isHidden).disposed(by: disposeBag)
+//        sss.drive(countLabel.rx.isHidden).disposed(by: disposeBag)
+        
+        sss.bind(to: nameLabel.rx.isHidden).disposed(by: disposeBag)
+        sss.bind(to: countLabel.rx.isHidden).disposed(by: disposeBag)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+            br.accept([])
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            br.accept(["ccc"])
+        }
+//        br.accept(["fff"])
+//        br.accept(["ddd"])
+
+    }
     func noDefer() {
         let bag = DisposeBag()
         var value: String? = nil
@@ -320,3 +366,4 @@ class TJRxDifficultViewController: TJBaseViewController {
         }
     }
 }
+

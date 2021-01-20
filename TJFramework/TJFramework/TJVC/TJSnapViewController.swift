@@ -13,6 +13,7 @@ import RxCocoa
 
 class TJSnapViewController: TJBaseViewController {
     let bag = DisposeBag()
+    
     lazy var view1: UIView = UIView()
     lazy var view2: UIView = UIView()
     lazy var view3: UIView = UIView()

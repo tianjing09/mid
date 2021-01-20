@@ -13,6 +13,14 @@ struct TJState {
     var isDownLoading = false
 }
 
+struct Aget {
+    let name: String
+    var modifyName: String {
+        return "\(name)llll"
+    }
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        //let a = minCost(withAllCostOption: [[3],[4],[21],[18],[7],[4]])
        // print(a)
+        let get = Aget(name: "ddd")
+        print(get.modifyName)
         let d = ["jo":23,"ja":24]
         let x = d.sorted{$0.1<$1.1}.map{$0.0}
        
