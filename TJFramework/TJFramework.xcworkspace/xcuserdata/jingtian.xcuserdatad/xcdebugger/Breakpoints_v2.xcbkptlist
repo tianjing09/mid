@@ -87,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D8B3FF6-5BFF-45DE-8482-8B7A5FB23B39"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TJFramework/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0E031A8A-9851-452F-AFE7-B6608919E98C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -130,6 +114,38 @@
             endingLineNumber = "139"
             landmarkName = "reply()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7AAB0AEA-63B1-4791-93B4-C136FA852850 - 3b57a21ca5d1a961"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TJFramework.TJRxDifficultViewController.doDefer() -&gt; ()"
+                  moduleName = "TJFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jingtian/mid/TJFramework/TJFramework/TJVC/TJRxDifficultViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "7AAB0AEA-63B1-4791-93B4-C136FA852850 - 421b9783e68dd775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; RxSwift.Observable&lt;Swift.Optional&lt;Swift.String&gt;&gt; in TJFramework.TJRxDifficultViewController.doDefer() -&gt; ()"
+                  moduleName = "TJFramework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jingtian/mid/TJFramework/TJFramework/TJVC/TJRxDifficultViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "127">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

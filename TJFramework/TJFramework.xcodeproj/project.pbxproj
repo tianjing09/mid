@@ -37,6 +37,7 @@
 		7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */; };
 		7640590925AAEB53002DF434 /* TJRXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590825AAEB53002DF434 /* TJRXExtension.swift */; };
 		7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590E25AB056D002DF434 /* TJRX1View.swift */; };
+		764059A825BBFF2E002DF434 /* TJS1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764059A725BBFF2E002DF434 /* TJS1ViewController.swift */; };
 		764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BC72025A9388500A9257E /* TJGithhubViewController.swift */; };
 		766A015325A426CB00AC682B /* TJEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015225A426CB00AC682B /* TJEncrypt.swift */; };
 		766A015B25A6CC3D00AC682B /* TJRXDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */; };
@@ -113,6 +114,7 @@
 		7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJMVVMViewController.swift; sourceTree = "<group>"; };
 		7640590825AAEB53002DF434 /* TJRXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXExtension.swift; sourceTree = "<group>"; };
 		7640590E25AB056D002DF434 /* TJRX1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRX1View.swift; sourceTree = "<group>"; };
+		764059A725BBFF2E002DF434 /* TJS1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJS1ViewController.swift; sourceTree = "<group>"; };
 		764BC72025A9388500A9257E /* TJGithhubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJGithhubViewController.swift; sourceTree = "<group>"; };
 		766A015225A426CB00AC682B /* TJEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJEncrypt.swift; sourceTree = "<group>"; };
 		766A015925A6CC3D00AC682B /* TJRXDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXDemoViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				3F05494821A24D7600060BBF /* TJOneViewController.swift */,
+				764059A725BBFF2E002DF434 /* TJS1ViewController.swift */,
 				3F05494A21A24D9200060BBF /* TJTwoViewController.swift */,
 				3F05494C21A24DAA00060BBF /* TJThreeViewController.swift */,
 				3F3685A12333274800EA4A9A /* TJSnapViewController.swift */,
@@ -483,6 +486,7 @@
 				764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */,
 				7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */,
 				7616C91225977479008A5EEC /* TJRxRestartViewController.swift in Sources */,
+				764059A825BBFF2E002DF434 /* TJS1ViewController.swift in Sources */,
 				3F05495821A7976E00060BBF /* TJMutiSelectView.swift in Sources */,
 				3F05494D21A24DAA00060BBF /* TJThreeViewController.swift in Sources */,
 				3F85C048219D0B0E00994EF9 /* ViewController.swift in Sources */,
