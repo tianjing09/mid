@@ -14,7 +14,7 @@ struct TJState {
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var model = TJState()
@@ -27,7 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let d = ["jo":23,"ja":24]
         let x = d.sorted{$0.1<$1.1}.map{$0.0}
        
+        let options: UNAuthorizationOptions = [.alert, .sound]
         
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (s, e) in
+            if s {
+                print("success")
+            } else {
+                print("fail")
+            }
+        }
+        UNUserNotificationCenter.current().delegate = self
         var list = ["a","b","c","d","e","f","g"]
         list[4...6] = ["5","6"]
         print(list)
@@ -51,6 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nav
         window?.backgroundColor = .gray
         window?.makeKeyAndVisible()
+        let alert = UIAlertController(title: "我是**", message: "爱我的点击确定", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
+
         return true
     }
 //    func modifyClass(a: TJState)  {
@@ -133,6 +146,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+
+    
+    // The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from application:didFinishLaunchingWithOptions:.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let view = UIView(frame: CGRect(x: 20, y: 100, width: 300, height: 50))
+        view.backgroundColor = .red
+        window?.rootViewController?.view.addSubview(view)
+        completionHandler()
+    }
+
     
     func fizzBuzz(n: Int) -> Void {
         if n < 1 {

@@ -14,6 +14,7 @@ def shared_pods
     pod 'AlamofireObjectMapper'
     pod 'RxAlamofire'
     pod 'CryptoSwift'
+    pod 'SwiftProgressHUD'
 end
 
 target 'TJFramework' do

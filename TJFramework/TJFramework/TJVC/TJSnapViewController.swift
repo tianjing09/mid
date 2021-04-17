@@ -45,7 +45,8 @@ class TJSnapViewController: TJBaseViewController {
         view1.snp_makeConstraints { (make) in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(0)
-            make.height.width.equalTo(0)
+            make.height.equalTo(0)
+            make.width.equalTo(300)
         }
         view2.snp_makeConstraints { (make) in
             make.centerX.equalTo(scrollView)
@@ -79,7 +80,7 @@ class TJSnapViewController: TJBaseViewController {
         
         view1.addSubview(label)
         label.snp.makeConstraints { (make) in
-            make.width.equalTo(0)
+            make.width.equalTo(200)
             make.left.top.equalTo(10)
             make.height.equalTo(0)
         }
@@ -117,21 +118,21 @@ class TJSnapViewController: TJBaseViewController {
         self.view.setNeedsUpdateConstraints()
         if isShow {
         UIView.animate(withDuration: 0.5) {
-            self.view1.snp.updateConstraints { (make) in make.height.width.equalTo(200)
+            self.view1.snp.updateConstraints { (make) in make.height.equalTo(200)
             }
-            self.label.snp.updateConstraints { (make) in
-                make.height.equalTo(40)
-                make.width.equalTo(100)
-            }
+//            self.label.snp.updateConstraints { (make) in
+//                make.height.equalTo(40)
+//               // make.width.equalTo(100)
+//            }
             self.view.layoutIfNeeded()
         }} else {
             UIView.animate(withDuration: 0.5) {
-                self.view1.snp.updateConstraints { (make) in make.height.width.equalTo(0)
+                self.view1.snp.updateConstraints { (make) in make.height.equalTo(0)
                 }
-                self.label.snp.updateConstraints { (make) in
-                    make.height.equalTo(0)
-                    make.width.equalTo(0)
-                }
+//                self.label.snp.updateConstraints { (make) in
+//                    make.height.equalTo(0)
+//                    //make.width.equalTo(0)
+//                }
                 self.view.layoutIfNeeded()
             }
         }
