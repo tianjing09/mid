@@ -20,18 +20,31 @@ class TJTimeZoneViewController: TJBaseViewController {
         let dateFormate = DateFormatter()
         let timezone1 = TimeZone.current.abbreviation()
         let timezone2 = TimeZone.autoupdatingCurrent.abbreviation()
-        dateFormate.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormate.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         dateFormate.timeZone = TimeZone.init(abbreviation: "GMT+2")
         let date = Date()
         print(date)
         let dateStr = dateFormate.string(from: date)
         print(dateStr)
-        
+        //dateFormate.timeZone = TimeZone.current
         let date1 = dateFormate.date(from: dateStr)
         print(date1 ?? "")
+        
+        print(convertDate(date: Date()))
         //testGroup3()
-        testSemaphore1()
+        //testSemaphore1()
+       
     }
+    func convertDate(date: Date, from sourceTimeZone: TimeZone = TimeZone.init(secondsFromGMT: 0)!, to destinationTimeZone: TimeZone = TimeZone.current) -> Date {
+        
+        let sourceGMTOffset = sourceTimeZone.secondsFromGMT(for: date)
+        let destinationGMTOffset = destinationTimeZone.secondsFromGMT(for: date)
+        let interval = destinationGMTOffset - sourceGMTOffset
+        let destinationDateNow = Date(timeInterval: TimeInterval(interval), since: date)
+        
+        return destinationDateNow
+    }
+    
     func testSemaphore1() {
         let queue1:DispatchQueue = DispatchQueue.global()
         let a = [1,2,3,4,5,6,7,8,9,10]
