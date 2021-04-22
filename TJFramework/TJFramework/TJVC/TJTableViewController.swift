@@ -14,7 +14,8 @@ class TJTableViewController: TJBaseViewController, UITableViewDelegate, UITableV
             let table = UITableView(frame: CGRect(x: 10, y: 20, width: 380, height: 10000),style: UITableView.Style.plain)
      
             table.backgroundColor = UIColor.lightGray
-        table.register(NormalCell.self, forCellReuseIdentifier: "normalcell")
+        table.register(SubNormalCell.self, forCellReuseIdentifier: "sub")
+        table.register(Sub1NormalCell.self, forCellReuseIdentifier: "sub1")
             return table
      
         }()
@@ -60,7 +61,11 @@ class TJTableViewController: TJBaseViewController, UITableViewDelegate, UITableV
 //        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = NormalCell .init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "naormalCell")
+        let randomNumber:Int = Int(arc4random() % 2)
+        var type = "sub1"
+        if randomNumber == 1 { type = "sub" }
+        //let cell = NormalCell .cellWithData(style: .default, data: ["type" : type])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sub")!
             cell.textLabel?.text = String(format: "行：%d", indexPath.row+1)//String(indexPath.row)
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             print(indexPath.row+1)

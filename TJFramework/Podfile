@@ -9,12 +9,12 @@ def shared_pods
     pod 'OpenShare'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxDataSources'
     pod 'Alamofire'
     pod 'SnapKit'
     pod 'AlamofireObjectMapper'
     pod 'RxAlamofire'
     pod 'CryptoSwift'
-    pod 'SwiftProgressHUD'
 end
 
 target 'TJFramework' do

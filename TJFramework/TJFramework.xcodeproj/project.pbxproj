@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A73CE07AB3DC9C51B375B3C /* Pods_TJFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D671F4377DA6E3BE69FD5D /* Pods_TJFramework.framework */; };
 		3F05493E219D707300060BBF /* TJService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05493D219D707300060BBF /* TJService.swift */; };
 		3F054944219EA96900060BBF /* TJStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F054943219EA96900060BBF /* TJStructureViewController.swift */; };
 		3F05494621A245C800060BBF /* TJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05494521A245C700060BBF /* TJBaseViewController.swift */; };
@@ -34,6 +35,9 @@
 		76202B04259B2FA600C97393 /* Doctor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B01259B2F9B00C97393 /* Doctor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; };
 		76202B37259B74A700C97393 /* DynamicSDK1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76202B34259B749900C97393 /* DynamicSDK1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		763A5A0C262F27C000A8476D /* SubNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A5A0B262F27C000A8476D /* SubNormalCell.swift */; };
+		763A5A10262F280000A8476D /* Sub1NormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A5A0F262F280000A8476D /* Sub1NormalCell.swift */; };
+		763A5A2A263077BC00A8476D /* TJTBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A5A29263077BC00A8476D /* TJTBViewController.swift */; };
 		7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */; };
 		7640590925AAEB53002DF434 /* TJRXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590825AAEB53002DF434 /* TJRXExtension.swift */; };
 		7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640590E25AB056D002DF434 /* TJRX1View.swift */; };
@@ -115,6 +119,9 @@
 		76202A27259B117B00C97393 /* DynamicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK.framework; sourceTree = "<group>"; };
 		76202B01259B2F9B00C97393 /* Doctor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Doctor.framework; sourceTree = "<group>"; };
 		76202B34259B749900C97393 /* DynamicSDK1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicSDK1.framework; sourceTree = "<group>"; };
+		763A5A0B262F27C000A8476D /* SubNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubNormalCell.swift; sourceTree = "<group>"; };
+		763A5A0F262F280000A8476D /* Sub1NormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sub1NormalCell.swift; sourceTree = "<group>"; };
+		763A5A29263077BC00A8476D /* TJTBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJTBViewController.swift; sourceTree = "<group>"; };
 		7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJMVVMViewController.swift; sourceTree = "<group>"; };
 		7640590825AAEB53002DF434 /* TJRXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRXExtension.swift; sourceTree = "<group>"; };
 		7640590E25AB056D002DF434 /* TJRX1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJRX1View.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 				76202A29259B118400C97393 /* DynamicSDK.framework in Frameworks */,
 				76202B03259B2FA600C97393 /* Doctor.framework in Frameworks */,
 				76202B36259B74A700C97393 /* DynamicSDK1.framework in Frameworks */,
+				0A73CE07AB3DC9C51B375B3C /* Pods_TJFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +206,7 @@
 				7640590325AA9FEB002DF434 /* TJMVVMViewController.swift */,
 				76405A0B262AA74A002DF434 /* TJTimeZoneViewController.swift */,
 				76E47E48262B070500A9F4EC /* TJTableViewController.swift */,
+				763A5A29263077BC00A8476D /* TJTBViewController.swift */,
 			);
 			path = TJVC;
 			sourceTree = "<group>";
@@ -211,6 +220,8 @@
 				3F05495721A7976E00060BBF /* TJMutiSelectView.swift */,
 				7640590E25AB056D002DF434 /* TJRX1View.swift */,
 				76E47E4C262B0AE800A9F4EC /* NormalCell.swift */,
+				763A5A0B262F27C000A8476D /* SubNormalCell.swift */,
+				763A5A0F262F280000A8476D /* Sub1NormalCell.swift */,
 			);
 			path = TJView;
 			sourceTree = "<group>";
@@ -489,13 +500,16 @@
 			files = (
 				3F05494B21A24D9200060BBF /* TJTwoViewController.swift in Sources */,
 				766A015325A426CB00AC682B /* TJEncrypt.swift in Sources */,
+				763A5A2A263077BC00A8476D /* TJTBViewController.swift in Sources */,
 				3F05495621A6517E00060BBF /* TJCircleView.swift in Sources */,
 				76E47E4D262B0AE800A9F4EC /* NormalCell.swift in Sources */,
 				766A015B25A6CC3D00AC682B /* TJRXDemoViewController.swift in Sources */,
 				3F05494621A245C800060BBF /* TJBaseViewController.swift in Sources */,
 				3F05495421A3E2CF00060BBF /* TJColorfulBarView.swift in Sources */,
+				763A5A10262F280000A8476D /* Sub1NormalCell.swift in Sources */,
 				3F054944219EA96900060BBF /* TJStructureViewController.swift in Sources */,
 				7640590425AA9FEB002DF434 /* TJMVVMViewController.swift in Sources */,
+				763A5A0C262F27C000A8476D /* SubNormalCell.swift in Sources */,
 				3F3685A22333274800EA4A9A /* TJSnapViewController.swift in Sources */,
 				764BC72125A9388500A9257E /* TJGithhubViewController.swift in Sources */,
 				7640590F25AB056D002DF434 /* TJRX1View.swift in Sources */,

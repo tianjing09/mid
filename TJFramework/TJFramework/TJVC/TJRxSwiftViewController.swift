@@ -32,9 +32,19 @@ extension Music: CustomStringConvertible {
 struct MusicListViewModel {
     let data = Observable.just([
         Music(name: "无条件", singer: "陈奕迅"),
-        Music(name: "你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
         Music(name: "从前的我", singer: "陈洁仪"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
         Music(name: "在木星", singer: "朴树"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E"),
+        Music(name: "你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年你曾是少年", singer: "S.H.E")
+        
         ])
 }
 
@@ -69,6 +79,7 @@ class TJRxSwiftViewController: TJBaseViewController {
         //将数据源数据绑定到tableView上
         musicListViewModel.data
             .bind(to: tableView.rx.items(cellIdentifier:"musicCell")) { _, music, cell in
+                cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.text = music.name
                 cell.detailTextLabel?.text = music.singer
             }.disposed(by: disposeBag)

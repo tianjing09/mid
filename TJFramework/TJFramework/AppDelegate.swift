@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
     var model = TJState()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let d = ["jo":23,"ja":24]
         let x = d.sorted{$0.1<$1.1}.map{$0.0}
        
+        let a = "2011-02-04 12:30:21"
+        let b = "2011-02-04 12:30:20"
+        if a > b {
+          print("ddd")
+        }
         let options: UNAuthorizationOptions = [.alert, .sound]
         
         UNUserNotificationCenter.current().requestAuthorization(options: options) { (s, e) in
@@ -60,9 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window?.rootViewController = nav
         window?.backgroundColor = .gray
         window?.makeKeyAndVisible()
-        let alert = UIAlertController(title: "我是**", message: "爱我的点击确定", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
-        window?.rootViewController?.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "我是**", message: "爱我的点击确定", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+//        window?.rootViewController?.present(alert, animated: true, completion: nil)
 
         return true
     }

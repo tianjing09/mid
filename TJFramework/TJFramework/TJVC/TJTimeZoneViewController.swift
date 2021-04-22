@@ -31,7 +31,14 @@ class TJTimeZoneViewController: TJBaseViewController {
         print(date1 ?? "")
         
         print(convertDate(date: Date()))
-        //testGroup3()
+//        testGroup3(name: "11")
+//        testGroup3(name: "22")
+//        testGroup3(name: "33")
+        
+        testGroup4(name: "11")
+        testGroup4(name: "22")
+        testGroup4(name: "33")
+        
         //testSemaphore1()
        
     }
@@ -119,35 +126,176 @@ class TJTimeZoneViewController: TJBaseViewController {
             print("notify")
         }))
     }
-    
-    func testGroup3() {
-        let queue1:DispatchQueue = DispatchQueue.global()
-        queue1.async(group: group1, execute: DispatchWorkItem(block: {
+    func testGroup4(name: String) {
+        var a = 0
+        let group: DispatchGroup = DispatchGroup()
+        let lock = NSLock()
+        let queue1:DispatchQueue = DispatchQueue.global(qos: .utility)
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+            print("\(name)--w1")
+            
+            let sh = DispatchSemaphore(value: 0)
             self.request { (su) in
-                print("1s")
+                lock.lock()
+                a = a + 1
+                print("\(name)--1s--\(a)")
+                lock.unlock()
+               
+                sh.signal()
             } fail: { (fa) in
-                print("1f")
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--1f--\(a)")
+                lock.unlock()
+               
+                sh.signal()
             }
+            print("\(name)--b1")
+            sh.wait()
+            print("\(name)--t1")
         }))
         
-        queue1.async(group: group1, execute: DispatchWorkItem(block: {
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+            let sh = DispatchSemaphore(value: 0)
+            print("\(name)--w2")
+           
             self.request { (su) in
-                print("2s")
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--2s--\(a)")
+                lock.unlock()
+                
+                sh.signal()
             } fail: { (fa) in
-                print("2f")
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--2f--\(a)")
+                lock.unlock()
+                
+                sh.signal()
             }
+            print("\(name)--b2")
+            sh.wait()
+            print("\(name)--t2")
         }))
         
-        queue1.async(group: group1, execute: DispatchWorkItem(block: {
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+            let sh = DispatchSemaphore(value: 0)
+            print("\(name)--w3")
             self.request { (su) in
-                print("3s")
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--3s--\(a)")
+                lock.unlock()
+                
+                sh.signal()
             } fail: { (fa) in
-                print("3f")
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--3f--\(a)")
+                lock.unlock()
+               
+                sh.signal()
             }
+            print("\(name)--b3")
+            sh.wait()
+            print("\(name)--t3")
         }))
         
-        group1.notify(queue: DispatchQueue.main) {
-            print("notify")
+        group.notify(queue: DispatchQueue.main) {
+            print("\(name)--notify--\(a)")
+        }
+    }
+     
+    func testGroup3(name: String) {
+        var a = 0
+        let group: DispatchGroup = DispatchGroup()
+        let lock = NSLock()
+        let queue1:DispatchQueue = DispatchQueue.global(qos: .utility)
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+            print("\(name)--w1")
+            group.enter()
+           
+            self.request { (su) in
+                lock.lock()
+                a = a + 1
+                print("\(name)--1s--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            } fail: { (fa) in
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--1f--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            }
+            print("\(name)--b1")
+            //sh.wait()
+            print("\(name)--t1")
+        }))
+        
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+        
+            print("\(name)--w2")
+            group.enter()
+            self.request { (su) in
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--2s--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            } fail: { (fa) in
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--2f--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            }
+            print("\(name)--b2")
+            //sh.wait()
+            print("\(name)--t2")
+        }))
+        
+        queue1.async(group: group, execute: DispatchWorkItem(block: {
+            
+            print("\(name)--w3")
+            group.enter()
+            self.request { (su) in
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--3s--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            } fail: { (fa) in
+                lock.lock()
+                a = a + 1
+                //lock.unlock()
+                print("\(name)--3f--\(a)")
+                lock.unlock()
+                group.leave()
+                //sh.signal()
+            }
+            print("\(name)--b3")
+            //sh.wait()
+            print("\(name)--t3")
+        }))
+        
+        group.notify(queue: DispatchQueue.main) {
+            print("\(name)--notify--\(a)")
         }
     }
     
@@ -184,12 +332,14 @@ class TJTimeZoneViewController: TJBaseViewController {
     
     func request(success: @escaping (String) -> Void, fail: @escaping (String) -> Void) {
         let queue1:DispatchQueue = DispatchQueue.global()
-        Thread.sleep(forTimeInterval: 3)
-        let number1 = arc4random()
-        if number1 % 2 == 1 {
-            success("success")
-        } else {
-            fail("fail")
+        queue1.async {
+            Thread.sleep(forTimeInterval: 3)
+            let number1 = arc4random()
+            if number1 % 2 == 1 {
+                success("success")
+            } else {
+                fail("fail")
+            }
         }
     }
     
