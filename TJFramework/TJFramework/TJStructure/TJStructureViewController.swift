@@ -162,7 +162,7 @@ class TJStructureViewController: UIViewController, UITableViewDelegate, UITableV
         }
         self.selectVcIndex = 0
         if (type == 1) {
-            self.vcs = [TJTBViewController(),TJTableViewController(), TJTimeZoneViewController(),
+            self.vcs = [TJCollectionViewController(),TJTBViewController(),TJTableViewController(), TJTimeZoneViewController(),
                         TJS1ViewController(),
                 TJMVVMViewController(),TJGithhubViewController(),TJRxRestartViewController(),TJRxDifficultViewController(),TJOneViewController(), TJTwoViewController(), TJThreeViewController(),TJSnapViewController(),TJRxSwiftViewController()]
             self.menus =

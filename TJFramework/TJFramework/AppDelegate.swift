@@ -23,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
        //let a = minCost(withAllCostOption: [[3],[4],[21],[18],[7],[4]])
        // print(a)
+        let regStr = "000001001110000"
+        let rreg0 = regStr.replacingOccurrences(of: "^0*", with: "", options: .regularExpression, range: nil)
+        let rreg = regStr.replacingOccurrences(of: "0*$", with: "", options: .regularExpression, range: nil)
+        
+        let regStr1 = "###   ##pouttrrr    ###   "
+        let rreg10 = regStr1.replacingOccurrences(of: "^[#\\s]*", with: "", options: .regularExpression, range: nil)
+        let rreg1 = rreg10.replacingOccurrences(of: "[#\\s]*$", with: "", options: .regularExpression, range: nil)
+        
+        let regStr2 = "HHHH<BR   >KKK"
+        let rreg2 = regStr2.replacingOccurrences(of: "<[bB][Rr]\\s*/?>", with: "<br>", options: .regularExpression, range: nil)
         let d = ["jo":23,"ja":24]
         let x = d.sorted{$0.1<$1.1}.map{$0.0}
        
